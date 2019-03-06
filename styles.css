@@ -1,0 +1,17 @@
+body{
+font-family: 'Garamond';
+font-size: 16px;
+
+}
+
+/*This is the Footer */
+footer {
+  display: block;
+  line-height: 0.5;
+  position:
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  text-align: center;
+}

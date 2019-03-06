@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Jukebox of Misfit sayings</title>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <button v-on:click="getAdvice">Give me advice</button>
+    <button v-on:click="getQuote">Get me a quote</button>
+    <button v-on:click="getInsult">Insult me!</button>
+    <div v-if="clickedbutt">
+      <div v-if="loading">
+        <p>Finding the perfect message for you</p>
+      </div>
+      <div v-else>
+        <div id="message">
+          <p> {{ message }} </p>
+        </div>
+      </div>
+    </div>
+
+      <button v-on:click="saveMessage">Save this</button>
+
+    <h3>Saved Quotes, Advice, Insults</h3>
+    <li v-for="text in savedMessages">
+      <hr>
+      <label>{{ text }}</label>
+    </li>
+  </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="/script.js"></script>
+</body>
+<footer>
+  <p>Created by Shane Tay Skyler Hill</p>
+  <a href="https://github.com/CjDero/create_3"> Repository for this site.</a>
+</footer>
+
+</html>
