@@ -30,7 +30,7 @@ let app = new Vue({
         const response = await axios.get(url);
         console.log(response);
         this.loading = false;
-        this.message = response.data.quote + ' -Kanye Best       https://www.programmableweb.com/api/ermahgerd-translator';
+        this.message = response.data.quote + ' -Kanye Best';
       } catch (error) {
         console.log(error)
         this.message = "Error finding quote";
@@ -40,7 +40,7 @@ let app = new Vue({
       try {
         this.clickedbutt = true;
         this.loading = true;
-        let urlTemp = 'https://evilinsult.com/generate_insult.php?lang=en&type=json';
+        let urlTemp = 'https://insult.mattbas.org/api/insult.json';
         const url = proxyurl + urlTemp;
         const response = await axios.get(url);
         this.loading = false;
@@ -54,7 +54,9 @@ let app = new Vue({
       }
     },
     saveMessage() {
-      this.savedMessages.push(this.message);
+      if (message != '') {
+        this.savedMessages.push(this.message);
+      }
     },
   },
 });

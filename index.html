@@ -8,38 +8,43 @@
 </head>
 
 <body>
-
+  <h1>HEY YOU!</h1>
+  <p>Yeah you! Do you want some life advice? Some quote from a famous person? How about a really good insult?
+  <br>If you answer of any of those questions was yes, well then just click one of those handy buttons!</p>
+  <br>
   <div id="app">
-
-    <button v-on:click="getAdvice">Give me advice</button>
-    <button v-on:click="getQuote">Get me a quote</button>
-    <button v-on:click="getInsult">Insult me!</button>
-    <div v-if="clickedbutt">
-      <div v-if="loading">
-        <p>Finding the perfect message for you</p>
-      </div>
-      <div v-else>
-        <div id="message">
-          <p> {{ message }} </p>
+    <h2>WHAT DO YOU WANT?</h2>
+    <hr>
+        <button v-on:click="getAdvice">Give me advice</button>
+        <button v-on:click="getQuote">Get me a quote</button>
+        <button v-on:click="getInsult">Insult me!</button>
+      <div v-if="clickedbutt">
+        <div v-if="loading">
+          <p>Finding the perfect message for you</p>
+        </div>
+        <div v-else>
+          <div id="message">
+            <p> {{ message }} </p>
+          </div>
         </div>
       </div>
+      <br>
+      <button id="save" v-on:click="saveMessage">Save this</button>
+
+      <h3>Saved Quotes, Advice, Insults</h3>
+      <li v-for="text in savedMessages">
+        <hr>
+        <label>{{ text }}</label>
+      </li>
     </div>
-
-      <button v-on:click="saveMessage">Save this</button>
-
-    <h3>Saved Quotes, Advice, Insults</h3>
-    <li v-for="text in savedMessages">
-      <hr>
-      <label>{{ text }}</label>
-    </li>
-  </div>
+    <div id="fot">
+      <p>Created by Shane Tay & Skyler Hill</p>
+      <a href="https://github.com/CjDero/create_3"> Repository for this site.</a>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
-  <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="/script.js"></script>
 </body>
-<footer>
-  <p>Created by Shane Tay Skyler Hill</p>
-  <a href="https://github.com/CjDero/create_3"> Repository for this site.</a>
-</footer>
+
 
 </html>
